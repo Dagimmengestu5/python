@@ -1,11 +1,8 @@
-
-with open("test.txt") as file:
-
-        co = file.read()
-        print(co)
+import csv
+import pandas
 
 
+data = pandas.read_csv("wether.csv")
+# data_dict = data.to_dict()
 
-file.close()
-# master-home
-# vscode
+print(data[data.day == "Monday"])
