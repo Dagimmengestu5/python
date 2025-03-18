@@ -1,4 +1,9 @@
-print("Day_24_main.py")
-print("i recive the doc")
-print("and i will return you the code")
-# good he is work
+
+
+
+file = open("test.txt")
+co = file.read()
+print(co)
+print(file.read())
+
+
