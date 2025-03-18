@@ -1,9 +1,10 @@
 
+with open("test.txt") as file:
+
+        co = file.read()
+        print(co)
 
 
-file = open("test.txt")
-co = file.read()
-print(co)
-print(file.read())
 
-
+file.close()
+# master
