@@ -1,5 +1,9 @@
+import pandas
 
-num = [1,1,2,3,5,8,13,21,34,55,89]
+data = pandas.read_csv("nato_phonetic_alphabet.csv")
+phonetics_dict = {row.letter:row.code for(index, row) in data.iterrows()}
 
-ok = [sum for sum in num if sum % 2 == 0]
-print(ok)
+
+word = input("Enter a word: ").upper()
+output_list = [phonetics_dict[letter] for letter in word]
+print(output_list)
