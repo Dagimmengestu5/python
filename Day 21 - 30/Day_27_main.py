@@ -31,6 +31,8 @@ km_word.grid(column=2 , row=1 )
 calculate_beteen = Button(text="Calculate", command=mile_to_km)
 calculate_beteen.grid(column=2 , row=2 )
 
+win.mainloop()
+
 #
 # windows = Tk()
 # windows.title("my first GUI")
