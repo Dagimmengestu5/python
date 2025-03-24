@@ -2,7 +2,7 @@ import csv
 import pandas
 
 
-data = pandas.read_csv("wether.csv")
+data = pandas.read_csv("test.txt")
 # data_dict = data.to_dict()
 
-print(data[data.day == "Monday"])
+print(data[data.dagim == "Monday"])
