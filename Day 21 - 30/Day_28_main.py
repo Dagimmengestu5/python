@@ -11,11 +11,7 @@ short_brake_min = 5
 long_brake_min = 20
 timer = 0
 
-# while True:
-#
-#     time.sleep(1)
-#     count -= 1
-def restatr_timer():
+def restart_timer():
     win.after_cancel(timer)
     canvas.itemconfig(timer_setting, text="00:00")
     title_lab.config(text="Timer")
@@ -68,7 +64,7 @@ timer_setting = canvas.create_text(103,130,text="00:00",fill="white",font=("time
 canvas.grid(column=1, row=1)
 start_button = Button(text="Start", highlightthickness=0, command=start_timer)
 start_button.grid(column=0, row=2)
-restart_button = Button(text="Restart", highlightthickness=0 , command=restatr_timer)
+restart_button = Button(text="Restart", highlightthickness=0, command=restart_timer)
 restart_button.grid(column=2, row=2)
 chake_mark = Label(text="✔", bg=purple, fg=green)
 chake_mark.grid(column=1, row=3)
