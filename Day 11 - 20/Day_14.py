@@ -1,4 +1,5 @@
-# import random 
+######### compare
+# import random
 # import os
 
 # data = [
