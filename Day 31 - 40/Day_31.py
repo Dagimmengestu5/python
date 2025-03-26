@@ -1,3 +1,4 @@
+############### languge traling
 from tkinter import *
 import random
 import pandas
