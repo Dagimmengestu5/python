@@ -30,11 +30,11 @@ if today_tuple in birthday_dic:
     with open(file_path) as letter_file:
         letter = letter_file.read()
         letter = letter.replace("[NAME]", birthday_person["name"])
-    with smtplib.SMTP("smtp.gmail.com", )as connection:
+    with smtplib.SMTP("smtp.outlook.com", )as connection:
         connection.starttls()
         connection.login(user=my_email,password=my_password)
         connection.sendmail(from_addr=my_email,
-                            to_addrs="daveman191919@gmail.com",
+                            to_addrs="dagimmengestu5@gmail.com",
                             msg=f"Subject:Happy Birthday\n\n{letter}")
     # connection.close()
 # import smtplib
