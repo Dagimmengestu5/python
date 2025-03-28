@@ -41,7 +41,7 @@ while True:
             connection.login(user=my_email,password=my_password)
             connection.sendmail(from_addr=my_email,
                                 to_addrs="dagimmengestu5@gmail.com",
-                                msg="subject:It's the day of the week☝️👌👌☝️☝️☝️\n\niss is above you")
+                                msg="subject:It's the day of the week☝👌👌☝️☝️☝️\n\niss is above you")
 
 
 # go to up on the sky ok
