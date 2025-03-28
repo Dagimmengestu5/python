@@ -73,41 +73,41 @@
 
 import random
 import os
-
-vs = '''
-
- .----------------.  .----------------. 
-| .--------------. || .--------------. |
-| | ____   ____  | || |    _______   | |
-| ||_  _| |_  _| | || |   /  ___  |  | |
-| |  \ \   / /   | || |  |  (__ \_|  | |
-| |   \ \ / /    | || |   '.___`-.   | |
-| |    \ ' /     | || |  |`\____) |  | |
-| |     \_/      | || |  |_______.'  | |
-| |              | || |              | |
-| '--------------' || '--------------' |
- '----------------'  '----------------' 
-'''
-logo = '''
-
-
- _     _       _                
-| |   (_)     | |               
-| |__  _  __ _| |__   ___ _ __  
-| '_ \| |/ _` | '_ \ / _ \ '__| 
-| | | | | (_| | | | |  __/ |    
-|_| |_|_|\__, |_| |_|\___|_|    
-          __/ |                 
-         |___/                  
- _                              
-| |                             
-| | _____      _____ _ __       
-| |/ _ \ \ /\ / / _ \ '__|      
-| | (_) \ V  V /  __/ |         
-|_|\___/ \_/\_/ \___|_|         
-                                
-                                
-'''
+#
+# vs = '''
+#
+#  .----------------.  .----------------.
+# | .--------------. || .--------------. |
+# | | ____   ____  | || |    _______   | |
+# | ||_  _| |_  _| | || |   /  ___  |  | |
+# | |  \ \   / /   | || |  |  (__ \_|  | |
+# | |   \ \ / /    | || |   '.___`-.   | |
+# | |    \ ' /     | || |  |`\____) |  | |
+# | |     \_/      | || |  |_______.'  | |
+# | |              | || |              | |
+# | '--------------' || '--------------' |
+#  '----------------'  '----------------'
+# '''
+# logo = '''
+#
+#
+#  _     _       _
+# | |   (_)     | |
+# | |__  _  __ _| |__   ___ _ __
+# | '_ \| |/ _` | '_ \ / _ \ '__|
+# | | | | | (_| | | | |  __/ |
+# |_| |_|_|\__, |_| |_|\___|_|
+#           __/ |
+#          |___/
+#  _
+# | |
+# | | _____      _____ _ __
+# | |/ _ \ \ /\ / / _ \ '__|
+# | | (_) \ V  V /  __/ |
+# |_|\___/ \_/\_/ \___|_|
+#
+#
+# '''
 
 
 data = [
@@ -131,7 +131,7 @@ data = [
     {"name": "Mark Zuckerberg", "team": "Technology", "followers": "140", "age": 40, "nationality": "American", "profession": "Entrepreneur"},
     {"name": "Jackie Chan", "team": "Hollywood", "followers": "60", "age": 69, "nationality": "Chinese", "profession": "Actor, Martial Artist"},
 ]
-score = 0
+score = 3
 end_of_game = False
 amount_b = random.choice(data)
 def formate_data(amount):
@@ -148,7 +148,7 @@ def chake_answer(guess, a_follower, b_follower):
         return guess == "b"
 while not end_of_game:
     os.system('cls' if os.name == 'nt' else 'clear')
-    print(logo)
+    # print(logo)
     print("welcome to the Upper Lower game")
     
     amount_a = amount_b
@@ -158,9 +158,9 @@ while not end_of_game:
     a_follower_count = amount_a["followers"]
     b_follower_count = amount_b["followers"]
     print (f"Choise A: {formate_data(amount_a)}")
-    print(a_follower_count) # example
-    print(vs)
-    print(b_follower_count) # exaple
+    # print(a_follower_count) # example
+    # print(vs)
+    # print(b_follower_count) # exaple
     print (f"Choise B: {formate_data(amount_b)}")
 
     guess = input("which of the more fallower in instagram 'A' or 'B': ").lower()

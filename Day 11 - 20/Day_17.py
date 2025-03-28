@@ -168,5 +168,5 @@ for quastion in question_data:
 quize = Quizbrain(quastion_bank)
 while quize.still_has_question():
     quize.next_question()
-    print(f"Your current score is: {quize.score}/{len(quize.question_list)}")
+    print(f"Your current score is: {quize.score}/{quize.quastion_number}")
 
