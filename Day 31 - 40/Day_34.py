@@ -67,6 +67,7 @@ class Gui:
         self.rong_button.grid(row=2, column=1)
         self.get_next_quastion()
         self.window.mainloop()
+        # yes
     def get_next_quastion(self):
         q_text = self.quiz.next_question()
         self.canvas.itemconfig(self.question_text, text=q_text)
