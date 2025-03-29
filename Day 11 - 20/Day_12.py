@@ -28,9 +28,10 @@ attempet = 10
 h_attempet = 5
 end_of_game = False
 def easy():
+    try:
         global end_of_game
         global attempet
-        print(f"the guess word is : {number}")
+        # print(f"the guess word is : {number}")
         
         guess = int(input("guess the number: "))
         if guess != number:
@@ -43,10 +44,14 @@ def easy():
         if guess == number:
              end_of_game = True
              print(f"congra you are find the number the gussing number is [{number}]")
+
         if attempet == 0:
                 end_of_game = True
                 print(f"oohh i'm so sory the number is [{number}] Game Over")
-def hard():   
+    except ValueError:
+            print("!!!oops you have not insert number please input the number !!!")
+def hard():
+    try:
         global end_of_game
         global h_attempet
         print(f" your guessing number is: {number} ")
@@ -65,10 +70,15 @@ def hard():
         if h_attempet == 0:
                 end_of_game = True
                 print(f"oohh i'm so sory the number is [{number}] Game Over")
-
+    except ValueError:
+        print("!!!oops you have not insert number please input the number !!!")
 while not end_of_game:
-    if chose == "easy":
-        easy()
 
-    elif chose == "hard":
-        hard()
+        if chose == "easy":
+            easy()
+
+        elif chose == "hard":
+            hard()
+        else:
+            print("please Type 'easy' or 'hard' you are not select them: ")
+            end_of_game = True
