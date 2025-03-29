@@ -2,7 +2,7 @@
 
 import pandas
 
-data = pandas.read_csv("nato_phonetic_alphabet.csv")
+data = pandas.read_csv("files/nato_phonetic_alphabet.csv")
 phonetics_dict = {row.letter:row.code for(index, row) in data.iterrows()}
 
 def generate():

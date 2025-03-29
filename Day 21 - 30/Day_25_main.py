@@ -5,7 +5,7 @@ import pandas
 
 screen = turtle.Screen()
 screen.title("Game")
-image = "blank_states_img.gif"
+image = "files/blank_states_img.gif"
 screen.addshape(image)
 # turtle = turtle.Turtle()
 turtle.shape(image)
@@ -13,7 +13,7 @@ turtle.shape(image)
 #     print(x,y)
 # turtle.onscreenclick(get_mouse_color)
 # turtle.mainloop()
-data = pandas.read_csv("50_states.csv")
+data = pandas.read_csv("files/50_states.csv")
 
 all_state = data.state.to_list()
 guessed_state = []
