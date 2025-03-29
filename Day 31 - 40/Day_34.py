@@ -35,10 +35,13 @@ class Quizbrain:
         if user_answer.lower() == correct_answer.lower():
             print("You got it right!")
             self.score += 1
-
+            return True
         else:
             print("That's wrong.")
+            return False
         print(f"your current score is: {self.score}/{self.quastion_number}")
+
+
 class Gui:
     def __init__(self, Quizbrain):
         self.quiz = Quizbrain
@@ -47,7 +50,7 @@ class Gui:
         self.window.config(padx=20, pady=20, bg=them_color)
         self.score = 0
         self.score_label = Label(text="Score: 0", bg=them_color, fg="white")
-        self.score_label.config(text=f"Score: {self.score}")
+
         self.score_label.grid(row=0, column=1)
         self.canvas = Canvas(width=300, height=240)
         self.canvas.grid(row=1, column=0, columnspan=2, pady=50)
@@ -55,7 +58,6 @@ class Gui:
             150, 125,
             width=280,
             text="Some Question Text",
-            fill=them_color,
             font=("Arial", 20, "italic")
         )
         true_image = PhotoImage(file="files/true.png")
@@ -63,26 +65,37 @@ class Gui:
         self.true_button = Button(image=true_image, highlightthickness=0, command=self.true_pressed)
         self.true_button.grid(row=2, column=0)
 
-        self.rong_button = Button(image=rong_image, highlightthickness=0,command=self.false_pressed)
+        self.rong_button = Button(image=rong_image, highlightthickness=0, command=self.false_pressed)
         self.rong_button.grid(row=2, column=1)
         self.get_next_quastion()
         self.window.mainloop()
         # yes
+
     def get_next_quastion(self):
+        self.score_label.config(text=f"Score: {self.quiz.score}")
         self.canvas.config(bg="white")
-        q_text = self.quiz.next_question()
-        self.canvas.itemconfig(self.question_text, text=q_text)
+        if self.quiz.still_has_question():
+            q_text = self.quiz.next_question()
+            self.canvas.itemconfig(self.question_text, text=q_text)
+        else:
+            self.canvas.itemconfig(self.question_text, text="You've reached the end of the quiz!", fill="green")
+            self.true_button.config(state="disabled")
+            self.rong_button.config(state="disabled")
+
     def true_pressed(self):
-        self.give_feedback(self.quiz.check_answer("True"))
+        is_right = self.quiz.check_answer("True")
+        self.give_feedback(is_right)
+
     def false_pressed(self):
         is_right = self.quiz.check_answer("False")
         self.give_feedback(is_right)
+
     def give_feedback(self, is_right):
-        if is_right:
-            self.canvas.config(bg="green")
-        else:
-            self.canvas.config(bg="red")
-        self.window.after(1000, self.get_next_quastion)
+            if is_right :
+                self.canvas.config(bg="green")
+            else:
+                self.canvas.config(bg="red")
+            self.window.after(1000, self.get_next_quastion)
 quastion_bank = []
 for quastion in question_data:
     quastion_text = quastion["question"]
