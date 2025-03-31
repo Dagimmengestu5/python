@@ -16,4 +16,5 @@ response = requests.get(url=owm_endpoint, params=parameters)
 # response.raise_for_status()
 whether = response.json()
 print(whether)
+print(whether["daily"][0]["temp"]["day"])
 
