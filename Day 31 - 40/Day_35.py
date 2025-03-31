@@ -10,7 +10,7 @@ parameters = {
     "appid": api_key,
     "exclude":"current,minutely,daily"
 }
-
+# xdfh
 
 response = requests.get(url=owm_endpoint, params=parameters)
 # response.raise_for_status()
