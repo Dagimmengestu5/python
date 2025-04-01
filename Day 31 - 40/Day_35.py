@@ -16,6 +16,5 @@ response = requests.get(url=owm_endpoint, params=parameters)
 # response.raise_for_status()
 whether = response.json()
 print(whether)
-input("Press enter to exitSGDFF and SDFAASDF")
-# I DONT HAVE UNDERSTAND FDGHJDFGHJGH CXGHDGH
+
 
