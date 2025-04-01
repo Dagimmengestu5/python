@@ -17,5 +17,5 @@ response = requests.get(url=owm_endpoint, params=parameters)
 whether = response.json()
 print(whether)
 input("Press enter to exitSGDFF and SDFAASDF")
-# I DONT HAVE UNDERSTAND FDGHJDFGHJGH
+# I DONT HAVE UNDERSTAND FDGHJDFGHJGH CXGHDGH
 
