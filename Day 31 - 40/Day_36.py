@@ -7,6 +7,7 @@ company_name = "Tesla Inc"
 stock_endpoint = "https://www.alphavantage.co/query"
 news_endpoint = "https://newsapi.org/v2/everything"
 stock_api_key = "5U39QU3VE5WJN05T"
+news_api_key = "2952fc05f75a49cf8382cebf4a82b844"
 
 stock_parameters = {
     "function":"TIME_SERIES_DAILY",
@@ -30,6 +31,16 @@ print(difference)
 
 diff_percentage = (difference / yesterday_closing_price) * 100
 print(diff_percentage)
+
+if diff_percentage < 5:
+    new_parms = {
+        "apiKey":news_api_key,
+        "qInTitle":company_name
+    }
+    new_response = requests.get(news_endpoint, params=new_parms)
+    articles = new_response.json()["articles"]
+    three_articles = articles[:3]
+    print(three_articles)
 # url = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo'
 # r = requests.get(url)
 # data = r.json()
