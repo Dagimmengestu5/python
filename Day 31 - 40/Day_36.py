@@ -20,11 +20,12 @@ data_list = [value for (key, value) in data.items()]
 yesterday_data = data_list[0]
 yesterday_closing_price = float(yesterday_data["4. close"])
 print(yesterday_closing_price)
-# dgcgjf
+
 day_before_yesterday_data = data_list[1]
 day_before_yesterday_closing_price = float(day_before_yesterday_data["4. close"])
 print(day_before_yesterday_closing_price)
 
+difference = yesterday_closing_price - day_before_yesterday_closing_price
 
 # url = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo'
 # r = requests.get(url)
