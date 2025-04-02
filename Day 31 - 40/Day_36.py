@@ -25,9 +25,11 @@ day_before_yesterday_data = data_list[1]
 day_before_yesterday_closing_price = float(day_before_yesterday_data["4. close"])
 print(day_before_yesterday_closing_price)
 
-difference = yesterday_closing_price - day_before_yesterday_closing_price
-
+difference = abs(yesterday_closing_price - day_before_yesterday_closing_price)
 print(difference)
+
+diff_percentage = (difference / yesterday_closing_price) * 100
+print(diff_percentage)
 # url = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo'
 # r = requests.get(url)
 # data = r.json()
