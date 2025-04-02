@@ -27,6 +27,7 @@ print(day_before_yesterday_closing_price)
 
 difference = yesterday_closing_price - day_before_yesterday_closing_price
 
+print(difference)
 # url = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo'
 # r = requests.get(url)
 # data = r.json()
