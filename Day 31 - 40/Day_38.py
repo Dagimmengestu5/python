@@ -48,13 +48,13 @@ GENDER = "M"
 WEIGHT_KG = 60
 HEIGHT_CM = 150
 AGE = 22
-sheet_end_point = ""
+
+sheet_endpoint = "https://docs.google.com/spreadsheets/d/1xMOT25uLpdscKqqVlFzuwF-v8Bq8-DOKgjzlZjWa8HU/edit?usp=sharing"
 
 APP_ID = "c22e45fa"
 API_KEY = "cd92e465c4aacd825b7787bb5aa5cc40"
 
 exercise_endpoint = "https://trackapi.nutritionix.com/v2/natural/exercise"
-sheet_endpoint = os.environ["YOUR_SHEET_ENDPOINT"]
 
 exercise_text = input("Tell me which exercises you did: ")
 
@@ -75,7 +75,7 @@ response = requests.post(exercise_endpoint, json=parameters, headers=headers)
 result = response.json()
 print(result)
 
-today_date = datetime.now().strftime("%Y/%m/d%")
+today_date = datetime.now().strftime("%Y%m%d")
 now_time = datetime.now().strftime("%X")
 
 for exercise in result["exercises"]:
@@ -89,23 +89,22 @@ for exercise in result["exercises"]:
         }
     }
 
-    #No Auth
-    sheet_response = requests.post(sheet_endpoint, json=sheet_inputs)
+    # No Auth
+    # sheet_response = requests.post(sheet_endpoint, json=sheet_inputs)
 
+    # Basic Auth
+    # sheet_response = requests.post(
+    #     sheet_endpoint,
+    #     json=sheet_inputs,
+    #     auth=(
+    #         os.environ["USERNAME"],
+    #         os.environ["PASSWORD"],
+    #     )
+    # )
 
-    #Basic Auth
-    sheet_response = requests.post(
-        sheet_endpoint,
-        json=sheet_inputs,
-        auth=(
-            os.environ["USERNAME"],
-            os.environ["PASSWORD"],
-        )
-    )
-
-    #Bearer Token
+    # Bearer Token
     bearer_headers = {
-    "Authorization": f"Bearer {os.environ['TOKEN']}"
+        "Authorization": f"Bearer {os.environ['TOKEN']}"
     }
     sheet_response = requests.post(
         sheet_endpoint,
