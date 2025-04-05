@@ -49,11 +49,11 @@ WEIGHT_KG = 60
 HEIGHT_CM = 150
 AGE = 22
 
-APP_ID = os.environ["c22e45fa"]
-API_KEY = os.environ["cd92e465c4aacd825b7787bb5aa5cc40"]
+APP_ID = ["c22e45fa"]
+API_KEY = ["cd92e465c4aacd825b7787bb5aa5cc40"]
 
 exercise_endpoint = "https://trackapi.nutritionix.com/v2/natural/exercise"
-sheet_endpoint = os.environ["YOUR_SHEET_ENDPOINT"]
+# sheet_endpoint = os.environ["YOUR_SHEET_ENDPOINT"]
 
 exercise_text = input("Tell me which exercises you did: ")
 
