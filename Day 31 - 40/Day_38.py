@@ -24,7 +24,7 @@ headers = {
     "x-app-id": APP_ID,
     "x-app-key": API_KEY,
 }
-# gfdsgdsfghjghj
+# gfdsgdsfghjghjcbcvb
 
 parameters = {
     "query": exercise_text,
