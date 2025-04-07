@@ -14,7 +14,7 @@ API_KEY = "cd92e465c4aacd825b7787bb5aa5cc40"
 
 exercise_endpoint = "https://trackapi.nutritionix.com/v2/natural/exercise"
 sheet_endpoint = "1OVR03qEdWmybLi5bUl9P_wbPXWmIDbquYj7tDIb59e4"
-# cgjhgcxcvbvcghjghj
+# cgjhgcxcvbvcghjghjfghfghj
 exercise_text = input("Tell me which exercises you did: ")
 
 headers = {
