@@ -71,34 +71,30 @@ chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
 print(f"you guessed word is {chosen_word}")
 life = 6
-end_of_game =False
-   # to creat the _ area 
+end_of_game = False
+# to create the _ area 
 display = []
 for _ in range(word_length):
-        display += "_"
+    display += "_"
 
 while not end_of_game:
-        guess = input("Guess the word: ").lower()
-    
-    
-        # To fill in the position of the letter area
-        for possition in range(word_length):
-            letter = chosen_word[possition]
-            if letter == guess:
-                display[possition] = letter 
-            os.system('cls' if os.name == 'nt' else 'clear')
-        if guess not in chosen_word:
-                life -= 1
-                os.system('cls' if os.name == 'nt' else 'clear')
-        if life == 0:
-            print(f"game over the word was '{chosen_word}'")
-            end_of_game = True
-           
-        print(stage[life])
-       
+    os.system("cls" if os.name == "nt" else "clear")  # Clear the screen
+    print(life)
+    guess = input("Guess the word: ").lower()
 
-        print(f"{' '.join(display)}")
+    # To fill in the position of the letter area
+    for possition in range(word_length):
+        letter = chosen_word[possition]
+        if letter == guess:
+            display[possition] = letter
+            pass
+    print(f"{' '.join(display)}")
+    if guess not in chosen_word:
+        life -= 1
+    if life == 0:
+        print(f"game over the word was '{chosen_word}'")
+        end_of_game = True
 
-        if "_" not in display:
-            end_of_game = True
-            print("you Win")
+    if "_" not in display:
+        end_of_game = True
+        print("you Win")
