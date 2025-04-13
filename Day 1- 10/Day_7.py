@@ -94,7 +94,7 @@ while not end_of_game:
     if life == 0:
         print(f"game over the word was '{chosen_word}'")
         end_of_game = True
-# sfsdfdfadfdadfdaf
+# sfsdfdfadfdadfdafdf
     if "_" not in display:
         end_of_game = True
         print("you Win")
