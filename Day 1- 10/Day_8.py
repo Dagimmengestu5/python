@@ -18,7 +18,7 @@ def caeser(start_text, shift_amount, chiper_direction):
         else :
             end_text += ch
     print(f"here's the {chiper_direction}d resalt: {end_text}")
-# 16
+# 17
 direction = input("Type 'decode' to decript Type ' encode' to encript \n")
 text = input("Type your massage: \n")
 shift = int(input("Type the shift number \n"))
