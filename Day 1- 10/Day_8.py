@@ -5,8 +5,8 @@ alphabet = [
     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
     'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
 ]
-#ggff
-def caeser(start_text, shift_amount, chiper_direction):
+#ggffghj
+def caeser(start_texu77ut, shift_amount, chiper_direction):
     end_text = ""
     if chiper_direction == "decode":
         shift_amount *= -1
