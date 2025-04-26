@@ -14,7 +14,7 @@ letters = [
     'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
 ]
 print("Welcome to Py Password Generator")
-# 3
+# 4
 nr_number = int(input("How many numbers would you like in your password? "))
 nr_letter = int(input("How many letters would you like in your password? "))
 nr_symbols = int(input("How many symbols would you like in your password? "))
