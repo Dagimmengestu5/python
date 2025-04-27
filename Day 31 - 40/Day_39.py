@@ -3,7 +3,7 @@ from telegram import Update, ForceReplay
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 import os
 
-TOKEN = 'YOUR_BOT_TOKEN'
+TOKEN = '7945188969:AAGqv31lZK0YaRjVTDqBXgTiCJyt1hyICnc'
 
 
 # Save file handler
