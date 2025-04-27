@@ -96,16 +96,51 @@ async def handle_text_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE
     if text == "Add File":
         await update.message.reply_text("Please send the file you want to upload.")
 
+
     elif text == "Saved Files":
+
         files = os.listdir("saved_files") if os.path.exists("saved_files") else []
+
         if files:
-            keyboard = [[file] for file in files]
-            keyboard.append(["Back to Main Menu"])
+
+            # Create rows of two files side-by-side
+
+            keyboard = []
+
+            # Add Main Menu first line full width
+
+            keyboard.append(["Main Menu"])
+
+            # Now arrange saved files 2 per row
+
+            row = []
+
+            for index, file in enumerate(files):
+
+                row.append(file)
+
+                if len(row) == 2:  # After two files, push the row
+
+                    keyboard.append(row)
+
+                    row = []
+
+            if row:  # If there is an extra file left
+
+                keyboard.append(row)
+
             reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
+
             await update.message.reply_text("Select a file:", reply_markup=reply_markup)
+
         else:
-            keyboard = [["Back to Main Menu"]]
+
+            # If no files, just show back button
+
+            keyboard = [["Main Menu"]]
+
             reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
+
             await update.message.reply_text("No files found.", reply_markup=reply_markup)
 
     elif os.path.exists(os.path.join("saved_files", text)):
@@ -119,6 +154,7 @@ async def handle_text_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     else:
         await update.message.reply_text("Invalid option. Please use the buttons.")
+
 
 
 if __name__ == '__main__':
