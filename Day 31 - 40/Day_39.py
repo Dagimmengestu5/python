@@ -1,1 +1,1 @@
-# 20
+from typing import final
