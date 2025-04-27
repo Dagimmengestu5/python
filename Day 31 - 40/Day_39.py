@@ -1,5 +1,5 @@
 from typing import final
-from telegram import Update, ForceReplay
+from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 import os
 
