@@ -1,4 +1,4 @@
-# tlegram
+# tlegram bot
 import os
 import random
 from telegram import Update , ReplyKeyboardMarkup
