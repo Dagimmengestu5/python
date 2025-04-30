@@ -17,6 +17,7 @@ def caeser(start_text, shift_amount, chiper_direction):
             end_text += alphabet[new_position]
         else :
             end_text += ch
+    print(ch)
     print(f"here's the {chiper_direction}d resalt: {end_text}")
 # 18
 direction = input("Type 'decode' to decript Type ' encode' to encript \n")
