@@ -200,7 +200,7 @@ async def handle_text_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE
         else:
             await update.message.reply_text("📂 You're already at the top.")
         return
-# hgfhgd
+# hgfhgdg
     if not context.user_data.get("current_path"):
         label_map = context.user_data.get("path_map", {})
         selected = label_map.get(text)
