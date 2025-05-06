@@ -18,7 +18,7 @@ while not bidding_finished:
     price = int(input("What is your bid? $"))
     bids[name] = price
     should_continue = input("Are there any other bidders? Type 'Yes' or 'No'. ").lower()
-    if should_continue == "no":
+    if should_continue == ["no","n","N"]:
         bidding_finished = True
         fined_hiest(bids)
     elif should_continue == "yes":
